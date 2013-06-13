@@ -1,6 +1,7 @@
 package com.kna.emotiongif.activity;
 
 import android.app.ActionBar;
+
 import android.app.Activity;
 import android.os.Bundle;
 import android.support.v4.widget.SlidingPaneLayout;
@@ -9,10 +10,17 @@ import android.view.MenuItem;
 import android.view.View;
 
 import com.kna.emotiongif.R;
+import com.kna.emotiongif.config.Config;
 import com.kna.emotiongif.data.DataManager;
 import com.kna.emotiongif.listener.LeftPanelSelecCallbackListener;
 
-public class MainActivity extends Activity implements LeftPanelSelecCallbackListener{
+import com.parse.Parse;
+import com.parse.ParseAnalytics;
+import com.parse.ParseInstallation;
+import com.parse.ParseObject;
+import com.parse.PushService;
+
+public class MainActivity extends Activity implements LeftPanelSelecCallbackListener, Config{
 
 	private ActionBar actionBar;
 	private SlidingPaneLayout slidingPaneLayout;
@@ -43,7 +51,7 @@ public class MainActivity extends Activity implements LeftPanelSelecCallbackList
 		super.onCreate(savedInstanceState);
         final View root = getLayoutInflater().inflate(R.layout.main_activity, null);
         setContentView(root);
-
+        
         actionBar = getActionBar();
         
         slidingPaneLayout = SlidingPaneLayout.class.cast(root.findViewById(R.id.slidingpanelayout));
