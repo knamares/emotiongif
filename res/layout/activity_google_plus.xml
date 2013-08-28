@@ -1,0 +1,108 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context=".GooglePlusActivity" >
+
+    <com.google.android.gms.common.SignInButton
+        android:id="@+id/gButtonSignIn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:text="@string/sign_in" />
+
+    <RelativeLayout
+        android:id="@+id/gRelativeUser"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:visibility="gone" >
+
+        <ImageView
+            android:id="@+id/gImageUser"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:layout_marginBottom="8dp"
+            android:layout_marginRight="8dp"
+            android:src="@drawable/ab_bottom_solid_myactionbar" />
+
+        <TextView
+            android:id="@+id/gTextName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_toRightOf="@+id/gImageUser"
+            android:ellipsize="end"
+            android:paddingBottom="8dp"
+            android:singleLine="true"
+            android:text="Nombre Apellidos"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/gTextUrl"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/gTextName"
+            android:layout_below="@+id/gTextName"
+            android:ellipsize="end"
+            android:singleLine="true"
+            android:text="Url" />
+
+        <TextView
+            android:id="@+id/gTextBday"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/gTextUrl"
+            android:layout_below="@+id/gTextUrl"
+            android:text="Birthday" />
+
+        <TextView
+            android:id="@+id/gTextEmail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/gTextBday"
+            android:layout_below="@+id/gTextBday"
+            android:text="Email" />
+
+        <TextView
+            android:id="@+id/gTextGender"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/gTextEmail"
+            android:layout_below="@+id/gTextEmail"
+            android:text="Gender" />
+
+        <ScrollView
+            android:id="@+id/gScrollView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@+id/gImageUser" >
+
+            <LinearLayout
+                android:id="@+id/gLinearContact"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical" >
+            </LinearLayout>
+        </ScrollView>
+
+        <Button
+            android:id="@+id/gButtonLogOut"
+            style="@style/ButtonText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:text="Log out" />
+    </RelativeLayout>
+
+</RelativeLayout>
